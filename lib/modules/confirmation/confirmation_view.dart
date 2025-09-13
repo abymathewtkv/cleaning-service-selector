@@ -79,7 +79,7 @@ class ConfirmationView extends GetView<ConfirmationController> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Text("Type: ${service.type}"),
-                              Text("Duration: ${service.duration} mins"),
+                              Text("Duration: ${service.duration}"),
                             ],
                           ),
                           const SizedBox(height: 6),
@@ -118,23 +118,65 @@ class ConfirmationView extends GetView<ConfirmationController> {
             const Divider(thickness: 1, color: Colors.black26),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 12),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              child: Column(
                 children: [
-                  const Text(
-                    "Total",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        "Total Services",
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        controller.services.length.toString(),
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.lightBlue[900]),
+                      ),
+                    ],
                   ),
-                  Text(
-                    "\$${controller.totalPrice.toStringAsFixed(2)}",
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.lightBlue[900]),
+                  
+                     const SizedBox(height: 8),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        "Total Price",
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "\$${controller.totalPrice.toStringAsFixed(2)}",
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.lightBlue[900]),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 8),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text(
+                        "Total Duration",
+                        style: TextStyle(
+                            fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        controller.totalDurationFormatted,
+                        style: TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.lightBlue[900]),
+                      ),
+                    ],
                   ),
                 ],
               ),
-            ),
+            )
           ],
         ),
       ),

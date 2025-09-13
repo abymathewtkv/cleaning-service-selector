@@ -66,7 +66,7 @@ class ServicesView extends StatelessWidget {
                           color: Colors.lightBlue[800],
                         ),
                       ),
-                      subtitle: Text("Duration: ${service.duration} mins"),
+                      subtitle: Text("Duration: ${service.duration}"),
                       trailing: Text(
                         "\$${service.price.toStringAsFixed(2)}",
                         style: TextStyle(

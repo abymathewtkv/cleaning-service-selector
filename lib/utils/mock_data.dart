@@ -79,5 +79,15 @@ class MockData {
         type: "Add-On",
         price: 6.50,
         duration: "15 mins"),
+            ServiceModel( 
+        name: "Electric Kettle (Descale)",
+        type: "Add-On",
+        price: 2.25,
+        duration: "15 mins"),
+          ServiceModel(
+        name: "Dishes (Wash)",
+        type: "Add-On",
+        price: 8.50,
+        duration: "20 mins"),
   ];
 }
